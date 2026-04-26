@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://12dyu22qb1sm"]
+
+[resource]
+resource_name = "colormap"
+cull_mode = 2
+texture_filter = 2
