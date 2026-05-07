@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://ccvxjwg6wiprf"]
 
 [ext_resource type="Script" uid="uid://cs7tdlnjn3kv3" path="res://main_node_script.gd" id="1_a202f"]
+[ext_resource type="Script" uid="uid://x478ms11dvjh" path="res://chodzenie.gd" id="2_i5arm"]
 [ext_resource type="ArrayMesh" uid="uid://b6fsistekm4hk" path="res://assets/models/bacon_bacon.res" id="2_r3fl7"]
 [ext_resource type="Material" uid="uid://c0dbmkkghlcaj" path="res://assets/models/colormap.tres" id="3_jka67"]
 [ext_resource type="Texture2D" uid="uid://ds1122jkhkbl8" path="res://assets/models/Textures/colormap.png" id="4_i5arm"]
-[ext_resource type="Script" uid="uid://03qc4qpqecu7" path="res://RightController.gd" id="4_jka67"]
+[ext_resource type="Script" uid="uid://c21yh7suyvtgr" path="res://kontroler_prawy.gd" id="5_i5arm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vubhe"]
 resource_name = "colormap"
@@ -31,9 +32,9 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_r3fl7"]
-top_radius = 0.2
-bottom_radius = 0.01
-height = 0.3
+top_radius = 0.05
+bottom_radius = 0.005
+height = 0.15
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r3fl7"]
 size = Vector2(20, 20)
@@ -84,6 +85,22 @@ radius = 1.0
 text = "Adrian Prymas"
 font_size = 43
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jka67"]
+size = Vector3(3.8, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i5arm"]
+size = Vector3(2, 1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc5p8"]
+albedo_color = Color(0.38201785, 0.15781815, 0.0548693, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsk3o"]
+size = Vector3(2, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wc5p8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4arys"]
+
 [node name="main" type="Node3D" unique_id=1608127333]
 script = ExtResource("1_a202f")
 
@@ -95,6 +112,7 @@ fov = 84.260895
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1202177254]
 tracker = &"left_hand"
+script = ExtResource("2_i5arm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1140688014]
 transform = Transform3D(0.4994967, 0, 0.022428678, 0, 0.5, 0, -0.022428678, 0, 0.4994967, 0.0019285679, 0.050130963, 0)
@@ -103,7 +121,7 @@ surface_material_override/0 = ExtResource("3_jka67")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=702861936]
 tracker = &"right_hand"
-script = ExtResource("4_jka67")
+script = ExtResource("5_i5arm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1837727602]
 transform = Transform3D(-0.49860823, 0, -0.037280574, 0, 0.5, 0, 0.037280574, 0, -0.49860823, 0, 0, 0)
@@ -115,16 +133,24 @@ exclude_parent = false
 target_position = Vector3(0, 0, -10)
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=258989186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014090128, 0.07742677, 0.08054422)
 visible = false
 mesh = SubResource("CylinderMesh_r3fl7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=596215835]
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=2947607]
-offset_left = 66.0
-offset_top = 40.0
-offset_right = 245.0
-offset_bottom = 155.0
+offset_left = 505.0
+offset_top = 252.0
+offset_right = 684.0
+offset_bottom = 367.0
+text = "Enter VR"
+
+[node name="Button2" type="Button" parent="CanvasLayer" unique_id=1464046091]
+offset_left = 505.0
+offset_top = 252.0
+offset_right = 684.0
+offset_bottom = 367.0
 text = "Enter VR"
 
 [node name="Level" type="Node3D" parent="." unique_id=1232669096]
@@ -176,3 +202,24 @@ mesh = SubResource("TextMesh_r3fl7")
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/napis" unique_id=1118443316]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/napis/StaticBody3D" unique_id=270604867]
+shape = SubResource("BoxShape3D_jka67")
+
+[node name="pudelko_dlugie" type="MeshInstance3D" parent="Level" unique_id=241874667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9346795, 0.48743773, 5.275026)
+mesh = SubResource("BoxMesh_i5arm")
+surface_material_override/0 = SubResource("StandardMaterial3D_wc5p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/pudelko_dlugie" unique_id=319105357]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/pudelko_dlugie/StaticBody3D" unique_id=281887556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001373291, 0, -0.014770508)
+shape = SubResource("BoxShape3D_jsk3o")
+
+[node name="pudelko" type="MeshInstance3D" parent="Level" unique_id=1061980651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.398363, 0.49291754, 5.4705772)
+mesh = SubResource("BoxMesh_wc5p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/pudelko" unique_id=1513758651]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/pudelko/StaticBody3D" unique_id=507280449]
+shape = SubResource("BoxShape3D_4arys")
