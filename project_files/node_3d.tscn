@@ -32,8 +32,8 @@ blend_shape_mode = 0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_r3fl7"]
 top_radius = 0.2
-bottom_radius = 0.2
-height = 0.2
+bottom_radius = 0.01
+height = 0.3
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r3fl7"]
 size = Vector2(20, 20)
