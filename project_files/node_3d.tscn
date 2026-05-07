@@ -140,17 +140,10 @@ mesh = SubResource("CylinderMesh_r3fl7")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=596215835]
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=2947607]
-offset_left = 505.0
-offset_top = 252.0
-offset_right = 684.0
-offset_bottom = 367.0
-text = "Enter VR"
-
-[node name="Button2" type="Button" parent="CanvasLayer" unique_id=1464046091]
-offset_left = 505.0
-offset_top = 252.0
-offset_right = 684.0
-offset_bottom = 367.0
+offset_left = 311.0
+offset_top = 134.0
+offset_right = 809.0
+offset_bottom = 406.0
 text = "Enter VR"
 
 [node name="Level" type="Node3D" parent="." unique_id=1232669096]
