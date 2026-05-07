@@ -39,6 +39,19 @@ roughness = 0.9
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
 size = Vector3(20, 0.1, 20)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r3fl7"]
+sky_top_color = Color(0.2198314, 0.4592415, 0.71308523, 1)
+
+[sub_resource type="Sky" id="Sky_jka67"]
+sky_material = SubResource("ProceduralSkyMaterial_r3fl7")
+
+[sub_resource type="Environment" id="Environment_i5arm"]
+background_mode = 2
+background_color = Color(0.7768833, 0.2439712, 0.42687735, 1)
+background_energy_multiplier = 0.66
+sky = SubResource("Sky_jka67")
+ambient_light_sky_contribution = 0.1
+
 [node name="main" type="Node3D" unique_id=1608127333]
 script = ExtResource("1_a202f")
 
@@ -84,7 +97,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_r3fl7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027, 0, -0.16)
 shape = SubResource("BoxShape3D_r3fl7")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=233897100]
-transform = Transform3D(0.7929544, 0.030795598, -0.6085022, 0.3473167, 0.7977172, 0.49296874, 0.50059396, -0.6022446, 0.62185764, -8.675857, 4.412449, 9.143234)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=233897100]
+transform = Transform3D(0.79295444, 0.030795602, -0.6085022, 0.34731674, 0.79771733, 0.49296868, 0.500594, -0.6022447, 0.6218577, -8.675857, 4.412449, 9.143234)
+shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1702281904]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1702281904]
+environment = SubResource("Environment_i5arm")
