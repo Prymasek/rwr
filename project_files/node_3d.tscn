@@ -105,6 +105,7 @@ size = Vector3(2, 1, 5)
 script = ExtResource("1_a202f")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1531300732]
+script = ExtResource("2_i5arm")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1900225849]
 transform = Transform3D(0.81417656, -0.013105774, 0.5804695, -3.236877e-05, 0.9997442, 0.022617515, -0.58061737, -0.018433439, 0.8139679, -0.55917513, 2.1681411, 2.315373)
@@ -112,7 +113,6 @@ fov = 33.2147
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1202177254]
 tracker = &"left_hand"
-script = ExtResource("2_i5arm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1140688014]
 transform = Transform3D(0.4994967, 0, 0.022428678, 0, 0.5, 0, -0.022428678, 0, 0.4994967, 0.0019285679, 0.050130963, 0)
