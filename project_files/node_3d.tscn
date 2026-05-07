@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cs7tdlnjn3kv3" path="res://main_node_script.gd" id="1_a202f"]
 [ext_resource type="ArrayMesh" uid="uid://c3ol5sowmbje7" path="res://assets/models/banana_banana.res" id="2_a0tk4"]
-[ext_resource type="ArrayMesh" uid="uid://5mgfuo0ioavh" path="res://assets/models/fish_fish.res" id="3_r3fl7"]
+[ext_resource type="ArrayMesh" uid="uid://d4lw3t1f7b331" path="res://assets/models/fish_fish.res" id="3_r3fl7"]
 
 [node name="main" type="Node3D" unique_id=1608127333]
 script = ExtResource("1_a202f")
