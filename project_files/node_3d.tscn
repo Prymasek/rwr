@@ -4,6 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b6fsistekm4hk" path="res://assets/models/bacon_bacon.res" id="2_r3fl7"]
 [ext_resource type="Material" uid="uid://c0dbmkkghlcaj" path="res://assets/models/colormap.tres" id="3_jka67"]
 [ext_resource type="Texture2D" uid="uid://ds1122jkhkbl8" path="res://assets/models/Textures/colormap.png" id="4_i5arm"]
+[ext_resource type="Script" uid="uid://03qc4qpqecu7" path="res://RightController.gd" id="4_jka67"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vubhe"]
 resource_name = "colormap"
@@ -102,6 +103,7 @@ surface_material_override/0 = ExtResource("3_jka67")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=702861936]
 tracker = &"right_hand"
+script = ExtResource("4_jka67")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1837727602]
 transform = Transform3D(-0.49860823, 0, -0.037280574, 0, 0.5, 0, 0.037280574, 0, -0.49860823, 0, 0, 0)
