@@ -121,6 +121,7 @@ surface_material_override/0 = ExtResource("3_jka67")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=702861936]
 tracker = &"right_hand"
+show_when_tracked = true
 script = ExtResource("5_i5arm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1837727602]
@@ -160,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027, 0, -0.16)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=233897100]
-transform = Transform3D(0.9961544, 0.08447875, -0.02323483, -0.016416647, 0.44046086, 0.8976215, 0.08606399, -0.89378834, 0.4401539, -7.9746046, 11.483887, 8.897455)
+transform = Transform3D(0.9951275, 0.09448815, -0.02816518, -0.03528015, 0.6079892, 0.79316115, 0.09206846, -0.7883029, 0.60836035, -3.1179013, 11.483887, 8.6651125)
 shadow_enabled = true
 shadow_bias = 0.396
 shadow_normal_bias = 2.693
