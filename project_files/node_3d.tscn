@@ -51,6 +51,8 @@ background_color = Color(0.7768833, 0.2439712, 0.42687735, 1)
 background_energy_multiplier = 0.66
 sky = SubResource("Sky_jka67")
 ambient_light_sky_contribution = 0.1
+ssr_enabled = true
+ssao_enabled = true
 
 [node name="main" type="Node3D" unique_id=1608127333]
 script = ExtResource("1_a202f")
@@ -58,6 +60,8 @@ script = ExtResource("1_a202f")
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1531300732]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1900225849]
+transform = Transform3D(0.999999, 0, 0.0014311696, -3.236953e-05, 0.9997442, 0.022617515, -0.0014308034, -0.022617538, 0.99974316, -0.23684728, 1.7338674, 3.423078)
+fov = 84.260895
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1202177254]
 tracker = &"left_hand"
@@ -98,8 +102,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027, 0, -0.16)
 shape = SubResource("BoxShape3D_r3fl7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=233897100]
-transform = Transform3D(0.79295444, 0.030795602, -0.6085022, 0.34731674, 0.79771733, 0.49296868, 0.500594, -0.6022447, 0.6218577, -8.675857, 4.412449, 9.143234)
+transform = Transform3D(0.9961544, 0.08447875, -0.02323483, -0.016416647, 0.44046086, 0.8976215, 0.08606399, -0.89378834, 0.4401539, -7.9746046, 11.483887, 8.897455)
 shadow_enabled = true
+shadow_bias = 0.396
+shadow_normal_bias = 2.693
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1702281904]
 environment = SubResource("Environment_i5arm")
