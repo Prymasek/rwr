@@ -29,6 +29,11 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_r3fl7"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.2
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_r3fl7"]
 size = Vector2(20, 20)
 
@@ -51,8 +56,6 @@ background_color = Color(0.7768833, 0.2439712, 0.42687735, 1)
 background_energy_multiplier = 0.66
 sky = SubResource("Sky_jka67")
 ambient_light_sky_contribution = 0.1
-ssr_enabled = true
-ssao_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
 albedo_color = Color(1, 0.25882354, 0, 1)
@@ -104,6 +107,13 @@ tracker = &"right_hand"
 transform = Transform3D(-0.49860823, 0, -0.037280574, 0, 0.5, 0, 0.037280574, 0, -0.49860823, 0, 0, 0)
 mesh = SubResource("ArrayMesh_wc5p8")
 surface_material_override/0 = ExtResource("3_jka67")
+
+[node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=643950302]
+target_position = Vector3(0, 0, -10)
+
+[node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=258989186]
+visible = false
+mesh = SubResource("CylinderMesh_r3fl7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=596215835]
 
