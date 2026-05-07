@@ -111,6 +111,7 @@ mesh = SubResource("ArrayMesh_wc5p8")
 surface_material_override/0 = ExtResource("3_jka67")
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=643950302]
+exclude_parent = false
 target_position = Vector3(0, 0, -10)
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=258989186]
