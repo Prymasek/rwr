@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ccvxjwg6wiprf"]
 
 [ext_resource type="Script" uid="uid://cs7tdlnjn3kv3" path="res://main_node_script.gd" id="1_a202f"]
-[ext_resource type="ArrayMesh" uid="uid://bkpdyu0hwxlw5" path="res://assets/models/bacon_bacon.res" id="2_r3fl7"]
+[ext_resource type="ArrayMesh" uid="uid://b6fsistekm4hk" path="res://assets/models/bacon_bacon.res" id="2_r3fl7"]
 [ext_resource type="Material" uid="uid://c0dbmkkghlcaj" path="res://assets/models/colormap.tres" id="3_jka67"]
 [ext_resource type="Texture2D" uid="uid://ds1122jkhkbl8" path="res://assets/models/Textures/colormap.png" id="4_i5arm"]
 
@@ -30,10 +30,14 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r3fl7"]
+size = Vector2(20, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
 albedo_color = Color(0.2, 0.6, 0.2, 1)
 roughness = 0.9
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
+size = Vector3(20, 0.1, 20)
 
 [node name="main" type="Node3D" unique_id=1608127333]
 script = ExtResource("1_a202f")
@@ -70,6 +74,17 @@ text = "Enter VR"
 [node name="Level" type="Node3D" parent="." unique_id=1232669096]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level" unique_id=584083095]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -0.003, -0.003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.003, -0.003)
 mesh = SubResource("PlaneMesh_r3fl7")
 surface_material_override/0 = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D" unique_id=1964996518]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D/StaticBody3D" unique_id=20714444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027, 0, -0.16)
+shape = SubResource("BoxShape3D_r3fl7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=233897100]
+transform = Transform3D(0.7929544, 0.030795598, -0.6085022, 0.3473167, 0.7977172, 0.49296874, 0.50059396, -0.6022446, 0.62185764, -8.675857, 4.412449, 9.143234)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1702281904]
