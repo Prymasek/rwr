@@ -54,6 +54,32 @@ ambient_light_sky_contribution = 0.1
 ssr_enabled = true
 ssao_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
+albedo_color = Color(1, 0.25882354, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i5arm"]
+material = SubResource("StandardMaterial3D_jka67")
+bottom_radius = 3.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wc5p8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wc5p8"]
+material = SubResource("StandardMaterial3D_i5arm")
+top_radius = 2.0
+bottom_radius = 1.0
+height = 10.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r3fl7"]
+height = 10.0
+radius = 1.0
+
+[sub_resource type="TextMesh" id="TextMesh_r3fl7"]
+text = "Adrian Prymas"
+font_size = 43
+
 [node name="main" type="Node3D" unique_id=1608127333]
 script = ExtResource("1_a202f")
 
@@ -109,3 +135,31 @@ shadow_normal_bias = 2.693
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1702281904]
 environment = SubResource("Environment_i5arm")
+
+[node name="slupek_1" type="MeshInstance3D" parent="Level" unique_id=691846283]
+transform = Transform3D(0.99902636, 0.0031934131, 0.044002768, -0.0031373152, 0.99999416, -0.0013440751, -0.044006813, 0.0012047404, 0.9990306, -4.536646, 0.9606558, -7.14793)
+mesh = SubResource("CylinderMesh_i5arm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/slupek_1" unique_id=2063664493]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/slupek_1/StaticBody3D" unique_id=1247198310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03932762, 0.0009288788)
+shape = SubResource("CylinderShape3D_wc5p8")
+
+[node name="slupek duuuzy" type="MeshInstance3D" parent="Level" unique_id=1326337335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.394756, 5.014332, -8.158713)
+mesh = SubResource("CylinderMesh_wc5p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/slupek duuuzy" unique_id=65662864]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/slupek duuuzy/StaticBody3D" unique_id=1790208528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72029734, 0)
+shape = SubResource("CylinderShape3D_r3fl7")
+
+[node name="napis" type="MeshInstance3D" parent="Level" unique_id=81929872]
+transform = Transform3D(0.7469105, -0.043531824, 0.6634983, -0.010588624, 0.99694914, 0.07732918, -0.66484046, -0.06478359, 0.74417084, -4.288537, 2.2369244, -6.8126655)
+mesh = SubResource("TextMesh_r3fl7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/napis" unique_id=1118443316]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/napis/StaticBody3D" unique_id=270604867]
