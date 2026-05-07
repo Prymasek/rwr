@@ -29,6 +29,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_r3fl7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
+albedo_color = Color(0.2, 0.6, 0.2, 1)
+roughness = 0.9
+
 [node name="main" type="Node3D" unique_id=1608127333]
 script = ExtResource("1_a202f")
 
@@ -40,7 +46,7 @@ script = ExtResource("1_a202f")
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1140688014]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0019285679, 0.050130963, 0)
+transform = Transform3D(0.4994967, 0, 0.022428678, 0, 0.5, 0, -0.022428678, 0, 0.4994967, 0.0019285679, 0.050130963, 0)
 mesh = ExtResource("2_r3fl7")
 surface_material_override/0 = ExtResource("3_jka67")
 
@@ -48,7 +54,7 @@ surface_material_override/0 = ExtResource("3_jka67")
 tracker = &"right_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1837727602]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(-0.49860823, 0, -0.037280574, 0, 0.5, 0, 0.037280574, 0, -0.49860823, 0, 0, 0)
 mesh = SubResource("ArrayMesh_wc5p8")
 surface_material_override/0 = ExtResource("3_jka67")
 
@@ -60,3 +66,10 @@ offset_top = 40.0
 offset_right = 245.0
 offset_bottom = 155.0
 text = "Enter VR"
+
+[node name="Level" type="Node3D" parent="." unique_id=1232669096]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level" unique_id=584083095]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -0.003, -0.003)
+mesh = SubResource("PlaneMesh_r3fl7")
+surface_material_override/0 = SubResource("StandardMaterial3D_r3fl7")
