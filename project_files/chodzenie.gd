@@ -2,30 +2,24 @@ extends XROrigin3D
 
 @export var move_speed: float = 2.5
 @export var deadzone: float = 0.15
-
 @onready var xr_camera: XRCamera3D = $XRCamera3D
 @onready var left_ctrl: XRController3D = $LeftController
 
-
 func _physics_process(delta: float) -> void:
-	var input_dir := left_ctrl.get_vector2("thumbstick")
+	var dir := Vector3.ZERO
 
-	# deadzone
-	if input_dir.length() < deadzone:
-		input_dir = Vector2.ZERO
+	#var fwd := -xr_camera.global_transform.basis.z
+	#var right := xr_camera.global_transform.basis.x
+	
+	# Horizontal plane projectoin
+	var fwd := -xr_camera.global_transform.basis.z; fwd.y = 0.0; fwd = fwd.normalized()
+	var right := xr_camera.global_transform.basis.x; right.y = 0.0; right = right.normalized()
 
-	# kierunek kamery (płaszczyzna pozioma)
-	var forward := -xr_camera.global_transform.basis.z
-	forward.y = 0.0
-	forward = forward.normalized()
+	var v: Vector2 = left_ctrl.get_vector2("thumbstick")
+	if v.length() < deadzone:
+		v = Vector2.ZERO
 
-	var right := xr_camera.global_transform.basis.x
-	right.y = 0.0
-	right = right.normalized()
-
-	# finalny kierunek ruchu
-	var direction := (forward * input_dir.y + right * input_dir.x)
-
-	if direction != Vector3.ZERO:
-		# STABILNY RUCH XR (bez global_translate)
-		global_position += direction.normalized() * move_speed * delta
+	dir += fwd * (v.y) + right * (v.x)
+	
+	if dir.length() > 0.0:
+		global_translate(dir.normalized() * move_speed * delta)

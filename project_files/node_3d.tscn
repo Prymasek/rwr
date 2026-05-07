@@ -107,8 +107,8 @@ script = ExtResource("1_a202f")
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1531300732]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1900225849]
-transform = Transform3D(0.999999, 0, 0.0014311696, -3.236953e-05, 0.9997442, 0.022617515, -0.0014308034, -0.022617538, 0.99974316, -0.23684728, 1.7338674, 3.423078)
-fov = 84.260895
+transform = Transform3D(0.81417656, -0.013105774, 0.5804695, -3.236877e-05, 0.9997442, 0.022617515, -0.58061737, -0.018433439, 0.8139679, -0.55917513, 2.1681411, 2.315373)
+fov = 33.2147
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1202177254]
 tracker = &"left_hand"
