@@ -17,7 +17,7 @@ resource_local_to_scene = true
 render_priority = 127
 shader = ExtResource("3_wc5p8")
 shader_parameter/intensity = 1.0
-shader_parameter/radius = 1.0
+shader_parameter/radius = 0.70000003325
 shader_parameter/softness = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vubhe"]
@@ -162,7 +162,7 @@ offset_left = 311.0
 offset_top = 134.0
 offset_right = 809.0
 offset_bottom = 406.0
-text = "Enter VR Tunelowanie"
+text = "Enter VR"
 
 [node name="Level" type="Node3D" parent="." unique_id=1232669096]
 
