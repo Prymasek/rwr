@@ -6,12 +6,10 @@ uniform float intensity : hint_range(0.0, 1.0) = 0.0;
 void fragment() {
     vec2 uv = UV * 2.0 - 1.0;
     float dist = length(uv);
-
-    float radius = 1.2 - (intensity * 0.5);
-    float softness = 0.2;
+    float radius = 0.8;
+    float softness = 0.4;
+    float vignette = smoothstep(radius, radius - softness, dist);
     
-    float alpha = smoothstep(radius - softness, radius, dist);
-
-    ALBEDO = vec3(0.0); 
-    ALPHA = alpha * intensity; 
+    ALBEDO = vec3(0.0);
+    ALPHA = (1.0 - vignette) * intensity;
 }

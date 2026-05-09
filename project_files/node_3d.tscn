@@ -12,9 +12,9 @@
 size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jsk3o"]
-render_priority = 0
+render_priority = 9
 shader = ExtResource("3_wc5p8")
-shader_parameter/intensity = 0.0
+shader_parameter/intensity = 0.5590000265525
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vubhe"]
 resource_name = "colormap"
