@@ -4,8 +4,17 @@
 [ext_resource type="Script" uid="uid://x478ms11dvjh" path="res://chodzenie.gd" id="2_i5arm"]
 [ext_resource type="ArrayMesh" uid="uid://b6fsistekm4hk" path="res://assets/models/bacon_bacon.res" id="2_r3fl7"]
 [ext_resource type="Material" uid="uid://c0dbmkkghlcaj" path="res://assets/models/colormap.tres" id="3_jka67"]
+[ext_resource type="Shader" uid="uid://di2e2ak53jgia" path="res://shader.gdshader" id="3_wc5p8"]
 [ext_resource type="Texture2D" uid="uid://ds1122jkhkbl8" path="res://assets/models/Textures/colormap.png" id="4_i5arm"]
 [ext_resource type="Script" uid="uid://c21yh7suyvtgr" path="res://kontroler_prawy.gd" id="5_i5arm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_i5arm"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsk3o"]
+render_priority = 0
+shader = ExtResource("3_wc5p8")
+shader_parameter/intensity = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vubhe"]
 resource_name = "colormap"
@@ -110,6 +119,11 @@ script = ExtResource("2_i5arm")
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1900225849]
 transform = Transform3D(0.81417656, -0.013105774, 0.5804695, -3.236877e-05, 0.9997442, 0.022617515, -0.58061737, -0.018433439, 0.8139679, -0.55917513, 2.1681411, 2.315373)
 fov = 33.2147
+
+[node name="tunelowanie" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=317832653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+mesh = SubResource("QuadMesh_i5arm")
+surface_material_override/0 = SubResource("ShaderMaterial_jsk3o")
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1202177254]
 tracker = &"left_hand"
