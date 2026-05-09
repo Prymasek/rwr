@@ -1,4 +1,4 @@
-	Food Kit (2.0)
+Food Kit (2.0)
 
 	Created/distributed by Kenney (www.kenney.nl)
 	Creation date: 26-06-2024 01:23

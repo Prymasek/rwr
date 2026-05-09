@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="WebXR"
-run/main_scene="uid://b5bqlt0k4n5ng"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/name="MWiWR Projekt"
+run/main_scene="uid://ccvxjwg6wiprf"
+config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.24883771, 0.047485113, 0.18071952, 1)
 config/icon="res://icon.svg"
 
 [physics]
@@ -22,9 +23,8 @@ config/icon="res://icon.svg"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 
 [xr]
 
+openxr/enabled=true
 shaders/enabled=true
