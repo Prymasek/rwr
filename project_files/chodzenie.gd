@@ -2,9 +2,10 @@ extends XROrigin3D
 
 @export var move_speed: float = 2.5
 @export var deadzone: float = 0.15
+
 @onready var xr_camera: XRCamera3D = $XRCamera3D
 @onready var left_ctrl: XRController3D = $LeftController
-@onready var tunnel_material = $XRCamera3D/tunelowanie.get_surface_override_material(0)
+@onready var tunnel_material = $XRCamera3D/tunelowanie.get_active_material(0)
 
 func _physics_process(delta: float) -> void:
 	var dir := Vector3.ZERO

@@ -10,11 +10,14 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_i5arm"]
 size = Vector2(2, 2)
+center_offset = Vector3(0, 0, -0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jsk3o"]
-render_priority = 9
+render_priority = 10
 shader = ExtResource("3_wc5p8")
-shader_parameter/intensity = 0.5590000265525
+shader_parameter/intensity = 1.0
+shader_parameter/radius = 1.0
+shader_parameter/softness = 0.34500001568898
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vubhe"]
 resource_name = "colormap"
@@ -121,7 +124,6 @@ transform = Transform3D(0.81417656, -0.013105774, 0.5804695, -3.236877e-05, 0.99
 fov = 33.2147
 
 [node name="tunelowanie" type="MeshInstance3D" parent="XROrigin3D/XRCamera3D" unique_id=317832653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 mesh = SubResource("QuadMesh_i5arm")
 surface_material_override/0 = SubResource("ShaderMaterial_jsk3o")
 
