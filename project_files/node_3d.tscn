@@ -10,15 +10,15 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_i5arm"]
 size = Vector2(2, 2)
-center_offset = Vector3(0, 0, -0.5)
+center_offset = Vector3(0, 0, 0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jsk3o"]
 resource_local_to_scene = true
-render_priority = 10
+render_priority = 127
 shader = ExtResource("3_wc5p8")
 shader_parameter/intensity = 1.0
 shader_parameter/radius = 1.0
-shader_parameter/softness = 0.34500001568898
+shader_parameter/softness = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vubhe"]
 resource_name = "colormap"
@@ -162,7 +162,7 @@ offset_left = 311.0
 offset_top = 134.0
 offset_right = 809.0
 offset_bottom = 406.0
-text = "Enter VR"
+text = "Enter VR Tunelowanie"
 
 [node name="Level" type="Node3D" parent="." unique_id=1232669096]
 
