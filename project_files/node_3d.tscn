@@ -10,7 +10,7 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_i5arm"]
 size = Vector2(2, 2)
-center_offset = Vector3(0, 0, 0.5)
+center_offset = Vector3(0, 0, -0.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jsk3o"]
 resource_local_to_scene = true
