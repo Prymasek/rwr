@@ -1,15 +1,31 @@
-🎮 RWR
-Virtual Reality Project
+<div align="center">
 
-📖 Opis
+# 🎮 RWR
 
-RWR to aplikacja VR stworzona w silniku Godot Engine 4 z wykorzystaniem OpenXR. Projekt prezentuje podstawowe mechaniki rzeczywistości wirtualnej, takie jak poruszanie się w przestrzeni 3D oraz interakcję z otoczeniem.
+### Virtual Reality Project
 
-🛠 Technologie
-Godot Engine 4
-GDScript
-OpenXR
+</div>
 
-🎓 Informacje
+---
 
-Projekt został wykonany jako projekt zaliczeniowy na przedmiot Media Wszechogarniające i Wirtualna Rzeczywistość.
+## 📖 Opis
+
+RWR to projekt rzeczywistości wirtualnej stworzony w silniku **Godot Engine 4** z wykorzystaniem **OpenXR**. Aplikacja prezentuje podstawowe mechaniki VR, takie jak poruszanie się użytkownika w przestrzeni 3D.
+
+## ✨ Funkcjonalności
+
+* Obsługa urządzeń VR poprzez OpenXR
+* Poruszanie się w środowisku 3
+* Środowisko testowe VR
+
+## 🛠 Technologie
+
+* Godot Engine 4
+* OpenXR
+
+## 🎓 Informacje
+
+Projekt wykonany jako projekt zaliczeniowy na przedmiot:
+
+**Media Wszechogarniające i Wirtualna Rzeczywistość**
+
